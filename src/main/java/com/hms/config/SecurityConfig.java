@@ -40,12 +40,12 @@ public class SecurityConfig {
 
         //haap
         //it will make all the url open for everyone
-        //  http.authorizeHttpRequests().anyRequest().permitAll();
-        http.authorizeHttpRequests().
-                requestMatchers("/api/v1/users/login","/api/v1/users/signup","/api/v1/users/signup-property-owner")
-                .permitAll()
-                .requestMatchers("/api/v1/country/addCountry").hasAnyRole("OWNER","ADMIN")
-                 .anyRequest().authenticated();
+          http.authorizeHttpRequests().anyRequest().permitAll();
+//        http.authorizeHttpRequests().
+//                requestMatchers("/api/v1/users/login","/api/v1/users/signup","/api/v1/users/signup-property-owner")
+//                .permitAll()
+//                .requestMatchers("/api/v1/country/addCountry").hasAnyRole("OWNER","ADMIN")
+//                 .anyRequest().authenticated();
 
         //this will built a http object with abobe config details that have been given
         // if we use return then it will hand over the object to spring IOC
